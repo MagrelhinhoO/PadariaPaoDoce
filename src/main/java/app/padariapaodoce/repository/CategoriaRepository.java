@@ -1,4 +1,8 @@
 package app.padariapaodoce.repository;
 
-public class CategoriaRepository {
+import app.padariapaodoce.entity.Categoria;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
+    Categoria findByNomeIgnoreCase(String nome);
 }
